@@ -4,12 +4,6 @@
         
 ]]
 
---[[
-
-        thx to some guy on v3rmillion for the base of the script, i reworked it
-        
-]]
-
 getgenv().infcash = false
 getgenv().Version = "v1.0"
 
@@ -31,7 +25,7 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
                 Invite = "34tJXDPzvq",
                 RememberJoins = false
             },
-        KeySystem = true,
+        KeySystem = false,
         KeySettings = {
             Title = "Vapor Artworks",
             Subtitle = "Key System",
@@ -73,6 +67,34 @@ local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shle
 
         end,
     })
+
+    local AutomaticsSection2 = AutomaticsTab:CreateSection("misc")
+
+    local disablesprint = AutomaticsTab:CreateButton({
+        Name = "Disable Shift2Sprint",
+        Callback = function()
+
+            Rayfield:Notify({
+                Title = "Vapor Artworks",
+                Content = "ok",
+                Duration = 6.5,
+                Image = 4483362458,
+                Actions = {
+                    Ignore = {
+                        Name = "alr",
+                        Callback = function()
+                            print("idgaf")
+                        end
+                    },
+                },
+            })
+
+            game:GetService("Players").LocalPlayer.PlayerScripts.Sprint:Destroy()
+
+        end,
+    })
+
+    
 
     local PlrTab = Window:CreateTab("Player", 7072724538) -- Title, Image
     local PlrSection = PlrTab:CreateSection("Local Player")
